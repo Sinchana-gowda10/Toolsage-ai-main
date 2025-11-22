@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playwrite+AU+QLD:wght@100..400&display=swap');
+@import "tailwindcss";
+
+*{
+  font-family: "Outfit", sans-serif;
+
+  @theme{
+    --color-primary: #2d2d5a; 
+  }
+}
+
+
+.reset-tw, .reset-tw *{
+  all: revert !important;
+}
+
+.cl-drawerRoot{
+  z-index: 10;
+}
