@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { assets } from '../assets/assets'
 import { X, Menu } from 'lucide-react' // ✅ Fixed here
-import Sidebar from '../components/SideBar'
+import SideBar from '../components/SideBar'
 import {SignIn , useUser } from '@clerk/clerk-react'
 
 const Layout = () => {
@@ -20,20 +20,21 @@ const Layout = () => {
           className='h-10 cursor-pointer' 
         />
         {
-          Sidebar 
-            ? <X 
-                className='w-6 h-6 text-gray-600 sm:hidden' 
-                onClick={() => setSidebar(false)} 
-              />
-            : <Menu 
-                className='w-6 h-6 text-gray-600 sm:hidden' 
-                onClick={() => setSidebar(true)} 
-              />
-        }
+  sidebar 
+    ? <X 
+        className='w-6 h-6 text-gray-600 sm:hidden' 
+        onClick={() => setSidebar(false)} 
+      />
+    : <Menu 
+        className='w-6 h-6 text-gray-600 sm:hidden' 
+        onClick={() => setSidebar(true)} 
+      />
+}
+
       </nav>
 
       <div className='flex-1 w-full flex h-[calc(100vh-64px)]'>
-    <Sidebar sidebar={sidebar} setSidebar={setSidebar}/>
+    <SideBar sidebar={sidebar} setSidebar={setSidebar} />
     <div className='flex-1 bg-[#F4F7FB]'>
         <Outlet />
     </div>
